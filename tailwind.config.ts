@@ -57,6 +57,12 @@ export default {
 					calm: 'hsl(var(--serenity-calm))',
 					focus: 'hsl(var(--serenity-focus))'
 				},
+				genz: {
+					purple: 'hsl(var(--genz-purple))',
+					pink: 'hsl(var(--genz-pink))',
+					blue: 'hsl(var(--genz-blue))',
+					mint: 'hsl(var(--genz-mint))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -112,7 +118,10 @@ export default {
 				'gentle-bounce': 'gentle-bounce 2s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'serenity-gradient': 'var(--serenity-gradient)'
+				'serenity-gradient': 'var(--serenity-gradient)',
+				'gradient-cosmic': 'var(--gradient-cosmic)',
+				'gradient-ocean': 'var(--gradient-ocean)',
+				'gradient-sunset': 'var(--gradient-sunset)'
 			},
 			boxShadow: {
 				'serenity': 'var(--serenity-glow)'

@@ -8,41 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 180 20% 99%;
-    --foreground: 200 15% 20%;
+    --background: 260 15% 97%;
+    --foreground: 260 25% 15%;
 
-    --card: 180 20% 98%;
-    --card-foreground: 200 15% 20%;
+    --card: 260 20% 96%;
+    --card-foreground: 260 25% 15%;
 
-    --popover: 180 20% 98%;
-    --popover-foreground: 200 15% 20%;
+    --popover: 260 20% 96%;
+    --popover-foreground: 260 25% 15%;
 
-    --primary: 170 50% 45%;
+    --primary: 280 85% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 150 25% 95%;
-    --secondary-foreground: 200 15% 20%;
+    --secondary: 320 45% 88%;
+    --secondary-foreground: 260 25% 15%;
 
-    --muted: 150 15% 96%;
-    --muted-foreground: 200 10% 60%;
+    --muted: 260 15% 94%;
+    --muted-foreground: 260 15% 45%;
 
-    --accent: 190 40% 85%;
-    --accent-foreground: 200 15% 20%;
+    --accent: 300 70% 80%;
+    --accent-foreground: 260 25% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 150 20% 90%;
-    --input: 150 20% 95%;
-    --ring: 170 50% 45%;
+    --border: 260 20% 88%;
+    --input: 260 15% 92%;
+    --ring: 280 85% 65%;
 
-    /* Custom design tokens for Serenity */
-    --serenity-gradient: linear-gradient(135deg, hsl(170, 50%, 45%), hsl(190, 45%, 55%));
-    --serenity-soft: 190 30% 92%;
-    --serenity-calm: 160 25% 85%;
-    --serenity-focus: 180 35% 75%;
-    --serenity-shadow: 170 30% 45% / 0.1;
-    --serenity-glow: 0 4px 20px hsl(var(--serenity-shadow));
+    /* Custom design tokens for Serenity - Gen-Z Vibes */
+    --serenity-gradient: linear-gradient(135deg, hsl(280, 85%, 65%), hsl(320, 75%, 70%), hsl(200, 80%, 75%));
+    --serenity-soft: 300 40% 94%;
+    --serenity-calm: 280 35% 88%;
+    --serenity-focus: 290 50% 82%;
+    --serenity-shadow: 280 60% 55% / 0.15;
+    --serenity-glow: 0 8px 32px hsl(var(--serenity-shadow));
+    
+    /* Additional Gen-Z colors */
+    --genz-purple: 280 85% 65%;
+    --genz-pink: 320 75% 70%;
+    --genz-blue: 200 80% 75%;
+    --genz-mint: 160 60% 80%;
+    --gradient-cosmic: linear-gradient(135deg, hsl(280, 85%, 65%), hsl(320, 75%, 70%));
+    --gradient-ocean: linear-gradient(135deg, hsl(200, 80%, 75%), hsl(160, 60%, 80%));
+    --gradient-sunset: linear-gradient(135deg, hsl(320, 75%, 70%), hsl(35, 85%, 75%));
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
