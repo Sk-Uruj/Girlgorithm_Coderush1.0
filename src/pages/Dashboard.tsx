@@ -4,8 +4,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Link, useNavigate } from "react-router-dom";
 import { LogOut, Heart, MessageCircle, Calendar, TrendingUp } from "lucide-react";
 
+// ✅ added import
+import Chatbot from "@/components/ui/Chatbot";
+
 const Dashboard = () => {
   const [userName, setUserName] = useState("");
+  const [showChatbot, setShowChatbot] = useState(false); // ✅ added state
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -150,6 +154,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
 
+          {/* ✅ updated Chatbot Card */}
           <Card className="p-8 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
             <CardHeader className="text-center pb-6">
               <div className="w-20 h-20 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-4">
@@ -165,14 +170,17 @@ const Dashboard = () => {
                 size="lg" 
                 variant="outline"
                 className="px-8 py-3 transition-all duration-300 hover:shadow-serenity"
-                disabled
+                onClick={() => setShowChatbot(!showChatbot)} // ✅ toggle chatbot
               >
-                Coming Soon
+                {showChatbot ? "Close Chat" : "Open Chat"} {/* ✅ dynamic label */}
               </Button>
             </CardContent>
           </Card>
         </div>
       </div>
+
+      {/* ✅ render chatbot if active */}
+      {showChatbot && <Chatbot />} 
     </div>
   );
 };
