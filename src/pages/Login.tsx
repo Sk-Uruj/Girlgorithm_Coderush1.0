@@ -21,20 +21,20 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-serenity-soft flex items-center justify-center px-4">
-      <Card className="w-full max-w-md shadow-serenity animate-fade-in">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <Card className="w-full max-w-md shadow-serenity animate-fade-in bg-card border-border/50">
         <CardHeader className="text-center space-y-4">
           <CardTitle className="text-3xl font-bold bg-serenity-gradient bg-clip-text text-transparent">
             Welcome Back
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            Sign in to your Serenity account to continue your wellness journey
+            Sign in to continue your wellness journey
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-card-foreground">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -42,11 +42,11 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="transition-all duration-300 focus:shadow-serenity"
+                className="bg-input border-border text-foreground transition-all duration-300 focus:shadow-serenity focus:border-primary"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-card-foreground">Password</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -55,13 +55,13 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="pr-12 transition-all duration-300 focus:shadow-serenity"
+                  className="pr-12 bg-input border-border text-foreground transition-all duration-300 focus:shadow-serenity focus:border-primary"
                 />
                 <Button
                   type="button"
                   variant="ghost"
                   size="sm"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 h-auto p-1"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 h-auto p-1 text-muted-foreground hover:text-foreground"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -71,7 +71,7 @@ const Login = () => {
             
             <Button 
               type="submit" 
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:shadow-serenity"
+              className="w-full bg-serenity-gradient hover:opacity-90 text-white border-0 transition-all duration-300 hover:shadow-serenity hover:scale-105"
             >
               Sign In
             </Button>
