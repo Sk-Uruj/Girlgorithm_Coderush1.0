@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link, useNavigate } from "react-router-dom";
-import { LogOut, Heart, MessageCircle, Calendar, TrendingUp } from "lucide-react";
+import { LogOut, Heart, MessageCircle, Calendar, TrendingUp, Shield } from "lucide-react";
 
 // ✅ added import
 import Chatbot from "@/components/ui/Chatbot";
@@ -134,46 +134,121 @@ const Dashboard = () => {
         </div>
 
         {/* Main Actions */}
-        <div className="grid md:grid-cols-2 gap-8 animate-slide-up delay-100">
-          <Card className="p-8 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
-            <CardHeader className="text-center pb-6">
-              <div className="w-20 h-20 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="text-white w-10 h-10" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slide-up delay-100">
+          <Card className="p-6 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-3">
+                <Heart className="text-white w-8 h-8" />
               </div>
-              <CardTitle className="text-2xl">Track Your Mood</CardTitle>
-              <CardDescription className="text-base">
-                Log how you're feeling today and discover patterns in your emotional wellness
+              <CardTitle className="text-xl">Track Your Mood</CardTitle>
+              <CardDescription className="text-sm">
+                Log how you're feeling today and discover patterns
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
               <Link to="/mood-tracker">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 transition-all duration-300 hover:shadow-serenity">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 transition-all duration-300 hover:shadow-serenity">
                   Check In Now
                 </Button>
               </Link>
             </CardContent>
           </Card>
 
-          {/* ✅ updated Chatbot Card */}
-          <Card className="p-8 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
-            <CardHeader className="text-center pb-6">
-              <div className="w-20 h-20 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="text-white w-10 h-10" />
+          <Card className="p-6 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-3">
+                <MessageCircle className="text-white w-8 h-8" />
               </div>
-              <CardTitle className="text-2xl">Chat with AI Companion</CardTitle>
-              <CardDescription className="text-base">
-                Get personalized support and coping strategies from our CBT-trained AI
+              <CardTitle className="text-xl">AI Companion</CardTitle>
+              <CardDescription className="text-sm">
+                Get personalized support and coping strategies
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
               <Button 
-                size="lg" 
+                size="sm" 
                 variant="outline"
-                className="px-8 py-3 transition-all duration-300 hover:shadow-serenity"
-                onClick={() => setShowChatbot(!showChatbot)} // ✅ toggle chatbot
+                className="px-6 py-2 transition-all duration-300 hover:shadow-serenity"
+                onClick={() => setShowChatbot(!showChatbot)}
               >
-                {showChatbot ? "Close Chat" : "Open Chat"} {/* ✅ dynamic label */}
+                {showChatbot ? "Close Chat" : "Open Chat"}
               </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="p-6 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-3">
+                <Heart className="text-white w-8 h-8" />
+              </div>
+              <CardTitle className="text-xl">Meditation</CardTitle>
+              <CardDescription className="text-sm">
+                Guided sessions and breathing exercises
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <Link to="/meditation">
+                <Button size="sm" variant="outline" className="px-6 py-2 transition-all duration-300 hover:shadow-serenity">
+                  Start Session
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="p-6 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-3">
+                <Heart className="text-white w-8 h-8" />
+              </div>
+              <CardTitle className="text-xl">Journal</CardTitle>
+              <CardDescription className="text-sm">
+                Daily gratitude and reflection practice
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <Link to="/journal">
+                <Button size="sm" variant="outline" className="px-6 py-2 transition-all duration-300 hover:shadow-serenity">
+                  Write Today
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="p-6 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-3">
+                <TrendingUp className="text-white w-8 h-8" />
+              </div>
+              <CardTitle className="text-xl">Analytics</CardTitle>
+              <CardDescription className="text-sm">
+                Track progress and discover insights
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <Link to="/analytics">
+                <Button size="sm" variant="outline" className="px-6 py-2 transition-all duration-300 hover:shadow-serenity">
+                  View Insights
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="p-6 hover:shadow-serenity transition-all duration-300 hover:-translate-y-2">
+            <CardHeader className="text-center pb-4">
+              <div className="w-16 h-16 bg-serenity-gradient rounded-full flex items-center justify-center mx-auto mb-3">
+                <Shield className="text-white w-8 h-8" />
+              </div>
+              <CardTitle className="text-xl">Crisis Support</CardTitle>
+              <CardDescription className="text-sm">
+                Emergency resources and safety planning
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <Link to="/crisis-support">
+                <Button size="sm" variant="outline" className="px-6 py-2 transition-all duration-300 hover:shadow-serenity">
+                  Get Help
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

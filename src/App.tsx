@@ -8,6 +8,10 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import MoodTracker from "./pages/MoodTracker";
+import MeditationPlayer from "./components/ui/MeditationPlayer";
+import WellnessJournal from "./components/ui/WellnessJournal";
+import WellnessAnalytics from "./components/ui/WellnessAnalytics";
+import CrisisSupport from "./components/ui/CrisisSupport";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +28,10 @@ const App = () => (
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/mood-tracker" element={<MoodTracker />} />
+          <Route path="/meditation" element={<MeditationPlayer />} />
+          <Route path="/journal" element={<WellnessJournal />} />
+          <Route path="/analytics" element={<WellnessAnalytics />} />
+          <Route path="/crisis-support" element={<CrisisSupport />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
